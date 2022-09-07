@@ -1,4 +1,3 @@
-vim.o.syntax=on
 vim.g.mapleader = ","
 
 vim.o.tabstop=4 
@@ -19,7 +18,7 @@ vim.o.undodir= vim.fn.stdpath('config') .. '/undo'
 vim.o.undofile=true
 vim.o.compatible=false
 vim.o.backspace='indent,eol,start'
--- vim.o.termguicolors=true
+vim.o.termguicolors=true
 
-vim.cmd('colorscheme industry')
-vim.bg = 'dark'
+vim.cmd('colorscheme tokyonight')
+
