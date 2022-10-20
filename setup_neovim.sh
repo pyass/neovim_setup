@@ -6,4 +6,4 @@ git clone https://github.com/pyass/neovim_setup.git ~/.config/nvim
 
 cd /tmp && git clone https://github.com/pyass/dev-tools.git && bash /tmp/dev-tools/setup.sh
 
-
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
