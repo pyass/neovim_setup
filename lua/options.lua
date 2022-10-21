@@ -19,8 +19,8 @@ vim.o.undofile=true
 vim.o.compatible=false
 vim.o.backspace='indent,eol,start'
 vim.o.termguicolors=true
-local theme, cmp = pcall(require, "folke/tokyonight.nvim")
+local theme, _ = pcall(require, "tokyonight")
 if not theme then
-    vim.cmd('colorscheme tokyonight')
   return
 end
+vim.cmd('colorscheme tokyonight')
