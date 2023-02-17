@@ -18,8 +18,9 @@ packer.startup(function()
   local use = use
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
-  use 'williamboman/nvim-lsp-installer'
   use 'junegunn/vim-easy-align'
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
