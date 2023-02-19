@@ -25,11 +25,13 @@ packer.startup(function()
   use 'wsdjeg/vim-todo'
   use 'scrooloose/syntastic'
   use 'mattn/emmet-vim'
-  use 'jiangmiao/auto-pairs' 
+  use 'jiangmiao/auto-pairs'
   use 'tpope/vim-repeat'
-  use 'theprimeagen/harpoon' 
-  use 'tpope/vim-fugitive' 
-  use 'nvim-treesitter/nvim-treesitter' 
+  use 'theprimeagen/harpoon'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb'
+  use 'lewis6991/gitsigns.nvim'
+  use 'nvim-treesitter/nvim-treesitter'
   use {
 	  'VonHeikemen/lsp-zero.nvim',
 	  requires = {
@@ -53,6 +55,6 @@ packer.startup(function()
 	  }
   }
   use 'nvim-lualine/lualine.nvim'
-  use 'folke/tokyonight.nvim' 
+  use 'folke/tokyonight.nvim'
   end
 )

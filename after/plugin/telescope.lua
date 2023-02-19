@@ -5,6 +5,11 @@ end
 
 telescope.setup {
     defaults = {
+        mappings = {
+            n = {
+                [',q'] = require("telescope.actions").close
+            }
+        },
         file_sorter = require("telescope.sorters").get_fzy_sorter,
         generic_sorter = require("telescope.sorters").get_fzy_sorter,
         vimgrep_arguments = {
@@ -31,6 +36,8 @@ vim.keymap.set("n","<leader>fg","<cmd>lua require('telescope.builtin').live_grep
 vim.keymap.set("n","<leader>fb","<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true })
 vim.keymap.set("n","<leader>fh","<cmd>lua require('telescope.builtin').help_tags()<cr>", { noremap = true })
 vim.keymap.set("n","<leader>ff","<cmd>lua require('telescope.builtin').git_files()<cr>", { noremap = true })
+vim.keymap.set("n","<leader>fs","<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", { noremap = true })
+vim.keymap.set("n","<leader>fw","<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>", { noremap = true })
 vim.keymap.set("n","<leader>kt","<cmd>Telescope keymaps<cr>", { noremap = true })
 vim.keymap.set("n","<leader>om","<cmd>Mason<cr>", { noremap = true })
-
+vim.keymap.set("n", "<leader>ht", "<cmd>Telescope help_tags<cr>",{ noremap = true })
