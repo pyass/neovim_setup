@@ -7,7 +7,7 @@ telescope.setup {
     defaults = {
         mappings = {
             n = {
-                [',q'] = require("telescope.actions").close
+                ['<leader>q'] = require("telescope.actions").close
             }
         },
         file_sorter = require("telescope.sorters").get_fzy_sorter,
