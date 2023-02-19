@@ -27,7 +27,7 @@ packer.startup(function()
   use 'mattn/emmet-vim'
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-repeat'
-  use 'theprimeagen/harpoon'
+  -- use 'theprimeagen/harpoon'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
