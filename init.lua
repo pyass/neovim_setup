@@ -1,8 +1,3 @@
 require('options')
 require('plugins')
 require('shortcuts')
-require('lsp')
-require('handlers')
-require('lsp_install')
-require('cmp_config')
-require('treesitter')
