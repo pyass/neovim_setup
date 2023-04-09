@@ -6,9 +6,9 @@ end
 lsp.preset("recommended")
 
 lsp.ensure_installed({
-    'tsserver',
     'lua_ls',
-    'pyright'
+    'pyright',
+    'bashls'
 })
 
 lsp.nvim_workspace()
