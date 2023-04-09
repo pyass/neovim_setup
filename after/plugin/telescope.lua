@@ -26,7 +26,8 @@ telescope.setup {
             "node_modules",
             ".git/.*",
             "dist/.*",
-            "__pycache__"
+            "__pycache__",
+            "target"
         }
     }
 }
