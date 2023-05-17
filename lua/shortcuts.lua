@@ -8,6 +8,8 @@ vim.keymap.set("n","<leader>z",":qa<CR>", { noremap = true })
 vim.keymap.set("n","<leader>nt",":tabnew<SPACE>", { noremap = true })
 vim.keymap.set("n","<leader>vi",":source<Space>$MYVIMRC<CR>", { noremap = true })
 
+vim.keymap.set("n","<leader>cd",":lua vim.o.autochdir=true<CR>", { noremap = true })
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
