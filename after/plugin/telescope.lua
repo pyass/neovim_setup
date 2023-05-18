@@ -40,7 +40,7 @@ telescope.setup {
 
 telescope.load_extension "file_browser"
 
-vim.keymap.set("n","<C-p>","<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>", { noremap = true })
+vim.keymap.set("n","<C-p>","<cmd>Telescope file_browser<cr>", { noremap = true })
 vim.keymap.set("n","ff","<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = true })
 vim.keymap.set("n","<leader>fb","<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true })
 vim.keymap.set("n","<leader>fg","<cmd>lua require('telescope.builtin').git_files()<cr>", { noremap = true })
