@@ -22,6 +22,7 @@ packer.startup(function()
     use 'tpope/vim-surround'
     use 'tpope/vim-speeddating'
     use 'tpope/vim-commentary'
+    use 'tpope/vim-unimpaired'
     use 'wsdjeg/vim-todo'
     use 'scrooloose/syntastic'
     use 'mattn/emmet-vim'
