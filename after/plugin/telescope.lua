@@ -14,6 +14,9 @@ telescope.setup {
         mappings = {
             n = {
                 ['<leader>q'] = require("telescope.actions").close
+            },
+            i = {
+                ['<C-t>'] = require("telescope.actions").select_tab
             }
         },
         file_sorter = require("telescope.sorters").get_fzy_sorter,
@@ -40,14 +43,14 @@ telescope.setup {
 
 telescope.load_extension "file_browser"
 
-vim.keymap.set("n","<C-p>","<cmd>Telescope file_browser<cr>", { noremap = true })
-vim.keymap.set("n","ff","<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>fb","<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>fg","<cmd>lua require('telescope.builtin').git_files()<cr>", { noremap = true })
+vim.keymap.set("n","<leader>fb","<cmd>Telescope file_browser<cr>", { noremap = true })
+vim.keymap.set("n","<C-p>","<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = true })
+vim.keymap.set("n","<leader>bu","<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true })
+vim.keymap.set("n","<leader>ff","<cmd>lua require('telescope.builtin').git_files()<cr>", { noremap = true })
 vim.keymap.set("n","<leader>fs","<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", { noremap = true })
 vim.keymap.set("n","<leader>fw","<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>lg","<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>kt","<cmd>Telescope keymaps<cr>", { noremap = true })
-vim.keymap.set("n","<leader>om","<cmd>Mason<cr>", { noremap = true })
+vim.keymap.set("n","<leader>fg","<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = true })
+vim.keymap.set("n","<leader>km","<cmd>Telescope keymaps<cr>", { noremap = true })
+vim.keymap.set("n","<leader>ma","<cmd>Mason<cr>", { noremap = true })
 vim.keymap.set("n", "<leader>ht", "<cmd>Telescope help_tags<cr>",{ noremap = true })
 
