@@ -8,6 +8,7 @@ vim.keymap.set("n","<leader>z",":qa<CR>", { noremap = true })
 vim.keymap.set("n","<leader>nt",":tabnew<SPACE>", { noremap = true })
 vim.keymap.set("n","<leader>vi",":source<Space>$MYVIMRC<CR>", { noremap = true })
 vim.keymap.set("n","<leader>gi",":Git<CR>", { noremap = true })
+vim.keymap.set("n","<leader>gp",":Git -c push.default=current push<CR>", { noremap = true })
 vim.keymap.set("n","<leader>bl",":!black %<CR>", { noremap = true })
 
 vim.keymap.set("n","<leader>cd",":lua vim.o.autochdir=true<CR>", { noremap = true })
