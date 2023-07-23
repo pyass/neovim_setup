@@ -24,7 +24,7 @@ packer.startup(function()
     use 'tpope/vim-commentary'
     use 'tpope/vim-unimpaired'
     use 'wsdjeg/vim-todo'
-    use 'jose-elias-alvarez/null-ls'
+    use 'mhartington/formatter.nvim'
     use 'scrooloose/syntastic'
     use 'mattn/emmet-vim'
     use 'jiangmiao/auto-pairs'
@@ -35,12 +35,11 @@ packer.startup(function()
     use 'tpope/vim-rhubarb'
     use 'lewis6991/gitsigns.nvim'
     use 'nvim-treesitter/nvim-treesitter'
-    -- use "mfussenegger/nvim-dap"
-    -- use "rcarriga/nvim-dap-ui"
-    -- use {"mfussenegger/nvim-dap-python", requires = {
-    --     "mfussenegger/nvim-dap",
-    --     "rcarriga/nvim-dap-ui",
-    -- }}
+    use 'jay-babu/mason-nvim-dap.nvim'
+    use {"mfussenegger/nvim-dap-python", requires = {
+        "mfussenegger/nvim-dap",
+        "rcarriga/nvim-dap-ui",
+    }}
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {

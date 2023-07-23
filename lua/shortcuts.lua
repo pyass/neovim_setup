@@ -1,17 +1,19 @@
-vim.api.nvim_set_keymap("i","jk","<ESC>",{ noremap = true })
+vim.api.nvim_set_keymap("i", "jk", "<ESC>", { noremap = true })
 
-vim.keymap.set("n","<leader>w","<C-W>w<CR>", { noremap = true })
-vim.keymap.set("n","<leader>q",":q<CR>", { noremap = true })
-vim.keymap.set("n","<leader>C",":q!<CR>", { noremap = true })
-vim.keymap.set("n","<leader>s",":w<CR>", { noremap = true })
-vim.keymap.set("n","<leader>z",":qa<CR>", { noremap = true })
-vim.keymap.set("n","<leader>nt",":tabnew<SPACE>", { noremap = true })
-vim.keymap.set("n","<leader>vi",":source<Space>$MYVIMRC<CR>", { noremap = true })
-vim.keymap.set("n","<leader>gi",":Git<CR>", { noremap = true })
-vim.keymap.set("n","<leader>gp",":Git -c push.default=current push<CR>", { noremap = true })
-vim.keymap.set("n","<leader>bl",":!black %<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>w", "<C-W>w<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>q", ":q<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>C", ":q!<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>s", ":w<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>z", ":qa<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>nt", ":tabnew<SPACE>", { noremap = true })
+vim.keymap.set("n", "<leader>vi", ":source<Space>$MYVIMRC<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>gi", ":Git<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>gp", ":Git -c push.default=current push<CR>", { noremap = true })
 
-vim.keymap.set("n","<leader>cd",":lua vim.o.autochdir=true<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>ft", ":Format<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>fr", ":FormatWrite<CR>", { noremap = true })
+
+vim.keymap.set("n", "<leader>cd", ":lua vim.o.autochdir=true<CR>", { noremap = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -29,7 +31,7 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 vim.keymap.set("n", "Q", "<nop>")
 
