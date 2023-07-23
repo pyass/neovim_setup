@@ -13,6 +13,33 @@ if not mason_dap_ok then
     return
 end
 
+local bash_bin = vim.fn.stdpath('data') .. "/mason/bin/bash-debug-adapter" -- note that this will error if you provide a non-existent package name
+local bash_pkg = vim.fn.stdpath('data') .. "/mason/packages/bash-debug-adapter/extension/bashdb_dir"
+
+dap.adapters.sh = {
+    type = "executable",
+    command = bash_bin,
+}
+dap.configurations.sh = {
+    {
+        name = "Launch Bash debugger",
+        type = "sh",
+        request = "launch",
+        program = "${file}",
+        cwd = "${fileDirname}",
+        pathBash = "bash",
+        pathCat = "cat",
+        pathMkfifo = "mkfifo",
+        pathPkill = "pkill",
+        env = {},
+        args = {},
+        -- showDebugOutput = true,
+        -- trace = true,
+        pathBashdb = bash_pkg .. "/bashdb",
+        pathBashdbLib = bash_pkg
+    }
+}
+
 mason_dap.setup {
     -- Makes a best effort to setup the various debuggers with
     -- reasonable debug configurations
@@ -38,6 +65,7 @@ mason_dap.setup {
             }
             mason_dap.default_setup(config) -- don't forget this!
         end,
+
     },
 
     -- You'll need to check that you have the required things installed
