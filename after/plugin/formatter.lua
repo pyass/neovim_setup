@@ -1,5 +1,10 @@
 -- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
-require("formatter").setup {
+local status_ok, formatter = pcall(require, "formatter")
+if not status_ok then
+  return
+end
+
+formatter.setup {
     -- Enable or disable logging
     logging = true,
     -- Set the log level
