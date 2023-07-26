@@ -17,9 +17,14 @@ formatter.setup {
             -- "formatter.filetypes.lua" defines default configurations for the
             -- "lua" filetype
             require("formatter.filetypes.python").black,
-
             -- You can also define your own configuration
         },
+        rust = {
+            require("formatter.filetypes.rust").rustfmt
+        },
 
+        bash = {
+            require("formatter.filetypes.sh").shfmt
+        }
     }
 }
