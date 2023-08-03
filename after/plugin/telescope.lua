@@ -1,13 +1,17 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-  return
+    return
 end
 
 telescope.setup {
-    extension = {
+    extensions = {
         file_browser = {
             theme = "ivy",
-            hijack_netrw = true
+            hijack_netrw = true,
+            dir_icon = "📁",
+            depth = 3,
+            auto_depth = true,
+            grouped = true
         }
     },
     defaults = {
@@ -36,21 +40,28 @@ telescope.setup {
             ".git/.*",
             "dist/.*",
             "__pycache__",
-            "target"
+            "target",
+            "undo"
         }
     }
 }
 
 telescope.load_extension "file_browser"
 
-vim.keymap.set("n","<leader>fb","<cmd>Telescope file_browser<cr>", { noremap = true })
-vim.keymap.set("n","<C-p>","<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>bu","<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>ff","<cmd>lua require('telescope.builtin').git_files()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>fs","<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>fw","<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>fg","<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = true })
-vim.keymap.set("n","<leader>km","<cmd>Telescope keymaps<cr>", { noremap = true })
-vim.keymap.set("n","<leader>ma","<cmd>Mason<cr>", { noremap = true })
-vim.keymap.set("n", "<leader>ht", "<cmd>Telescope help_tags<cr>",{ noremap = true })
-
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", { noremap = true })
+vim.api.nvim_set_keymap(
+    "n",
+    "<leader>fcd",
+    ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+    { noremap = true }
+)
+vim.keymap.set("n", "<C-p>", "<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>bu", "<cmd>lua require('telescope.builtin').buffers()<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>ff", "<cmd>lua require('telescope.builtin').git_files()<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>fs", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>fw", "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<cr>",
+    { noremap = true })
+vim.keymap.set("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>km", "<cmd>Telescope keymaps<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>ma", "<cmd>Mason<cr>", { noremap = true })
+vim.keymap.set("n", "<leader>ht", "<cmd>Telescope help_tags<cr>", { noremap = true })
