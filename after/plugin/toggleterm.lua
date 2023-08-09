@@ -61,7 +61,7 @@ function Cargo_test_toggle()
     cargo_test:toggle()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>npm", "<cmd> lua NPM_build_toggle()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>js", "<cmd> lua NPM_build_toggle()<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>rs", "<cmd> lua Cargo_build_toggle()<CR>", { noremap = true, silent = true })
 
