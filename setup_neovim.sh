@@ -9,3 +9,7 @@ cd /tmp && git clone https://github.com/pyass/dev-tools.git && bash /tmp/dev-too
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 pip3 install debugpy
+
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+
+echo 'eval "$(zoxide init bash)"' >> ~/.bashrc
