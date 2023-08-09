@@ -67,3 +67,4 @@ vim.api.nvim_set_keymap("n", "<leader>rs", "<cmd> lua Cargo_build_toggle()<CR>",
 
 vim.api.nvim_set_keymap("n", "<leader>rts", "<cmd> lua Cargo_build_toggle()<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("n", "<leader>py", "<cmd> TermExec cmd='python3 %'<CR>", { noremap = true, silent = true })
