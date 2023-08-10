@@ -26,7 +26,7 @@ toggleterm.setup({
     },
 })
 
--- vim.keymap.set("n","<leader>tg","<cmd>ToggleTerm<cr>", { noremap = true })
+vim.keymap.set("n","<leader>tg","<cmd>ToggleTerm<cr>", { noremap = true })
 
 vim.keymap.set("n", "<C-s>", "<cmd>ToggleTerm<cr>", { noremap = true })
 
