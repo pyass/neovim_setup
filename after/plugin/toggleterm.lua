@@ -49,6 +49,8 @@ local rust = Terminal:new({ cmd = "cargo run"})
 
 local cargo_test = Terminal:new({ cmd = "cargo test"})
 
+local go_run = Terminal:new({ cmd = "go run ."})
+
 function NPM_build_toggle()
     npm:toggle()
 end
@@ -61,6 +63,10 @@ function Cargo_test_toggle()
     cargo_test:toggle()
 end
 
+function Go_run_toggle()
+    go_run:toggle()
+end
+
 vim.api.nvim_set_keymap("n", "<leader>js", "<cmd> lua NPM_build_toggle()<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>rs", "<cmd> lua Cargo_build_toggle()<CR>", { noremap = true, silent = true })
@@ -68,3 +74,7 @@ vim.api.nvim_set_keymap("n", "<leader>rs", "<cmd> lua Cargo_build_toggle()<CR>",
 vim.api.nvim_set_keymap("n", "<leader>rts", "<cmd> lua Cargo_build_toggle()<CR>", { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap("n", "<leader>py", "<cmd> TermExec cmd='python3 %'<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("n", "<leader>uv", "<cmd> TermExec cmd='uvicorn %:t:r:app --reload'<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("n", "<leader>go", "<cmd> lua Go_run_toggle()<CR>", { noremap = true, silent = true })
