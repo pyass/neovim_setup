@@ -136,3 +136,12 @@ local cmp_config = lsp.defaults.cmp_config({
 })
 
 cmp.setup(cmp_config)
+
+-- LSP configs
+local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_ok then
+    return
+end
+
+lspconfig.v_analyzer.setup({})
+
