@@ -40,6 +40,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>nn", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>np", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>cl", "<cmd>:lclose<CR>")
+vim.keymap.set("n", "<leader>cl", "<cmd>:cclose<CR>")
+vim.keymap.set("n", "<leader>lc", "<cmd>:lclose<CR>")
 
 vim.keymap.set("n", "<leader>re", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
