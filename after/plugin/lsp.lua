@@ -36,8 +36,8 @@ lsp.on_attach(function(_, bufnr)
         '<cmd>lua vim.diagnostic.open_float()<CR>',
         opts
     )
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "]]", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, "n", "[[", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ll", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lo", "<cmd>:LspLog<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", "<cmd>:LspInfo<CR>", opts)
