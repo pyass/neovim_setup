@@ -3,17 +3,29 @@ if not lsp_ok then
     return
 end
 
-lsp.preset("recommended")
+local mason_ok, mason = pcall(require, "mason")
+if not mason_ok then
+    return
+end
 
-lsp.ensure_installed({
-    'lua_ls',
-    'pyright',
-    'bashls'
+mason.setup({})
+
+local lspconfig_ok, lspconfig = pcall(require, "mason-lspconfig")
+if not lspconfig_ok then
+    return
+end
+
+lspconfig.setup({
+    ensure_installed = { 'bashls', 'pyright', 'lua_ls' },
+    handlers = {
+        lsp.default_setup,
+        lua_ls = function()
+            local lua_opts = lsp.nvim_lua_ls()
+            require('lspconfig').lua_ls.setup(lua_opts)
+        end
+    }
 })
 
-lsp.nvim_workspace()
-
-lsp.setup()
 
 local cmp = require("cmp")
 
@@ -70,7 +82,7 @@ local cmp_config = lsp.defaults.cmp_config({
         ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-y>"] = cmp.config.disable,     -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
         ["<C-e>"] = cmp.mapping {
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
@@ -138,10 +150,3 @@ local cmp_config = lsp.defaults.cmp_config({
 cmp.setup(cmp_config)
 
 -- LSP configs
-local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_ok then
-    return
-end
-
-lspconfig.v_analyzer.setup({})
-
