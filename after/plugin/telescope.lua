@@ -40,7 +40,8 @@ telescope.setup {
             "dist/.*",
             "__pycache__",
             "target",
-            "undo"
+            "undo",
+            "vendor"
         }
     }
 }
