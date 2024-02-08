@@ -30,20 +30,16 @@ packer.startup(function()
     use 'jiangmiao/auto-pairs'
     use 'tpope/vim-repeat'
     use 'akinsho/toggleterm.nvim'
-    use {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        requires = { { "nvim-lua/plenary.nvim" } }
-    }
+    use 'theprimeagen/harpoon'
     use 'tpope/vim-fugitive'
     use 'tpope/vim-rhubarb'
     use 'lewis6991/gitsigns.nvim'
     use 'nvim-treesitter/nvim-treesitter'
     use 'jay-babu/mason-nvim-dap.nvim'
-    use { "mfussenegger/nvim-dap-python", requires = {
+    use {"mfussenegger/nvim-dap-python", requires = {
         "mfussenegger/nvim-dap",
         "rcarriga/nvim-dap-ui",
-    } }
+    }}
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -72,6 +68,6 @@ packer.startup(function()
         "nvim-telescope/telescope-file-browser.nvim",
         requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
     }
-    use { "folke/trouble.nvim" }
+    use { "folke/trouble.nvim"}
 end
 )
