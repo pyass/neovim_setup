@@ -26,6 +26,9 @@ lspconfig.setup({
     }
 })
 
+vim.keymap.set("n", "<leader>lo", "<cmd>:LspLog<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>li", "<cmd>:LspInfo<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>lr", "<cmd>:LspRestart<CR>", { noremap = true })
 
 local cmp = require("cmp")
 
@@ -40,7 +43,7 @@ lsp.on_attach(function(_, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
     vim.api.nvim_buf_set_keymap(
         bufnr,
         "n",
@@ -51,9 +54,6 @@ lsp.on_attach(function(_, bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "]]", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "[[", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ll", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lo", "<cmd>:LspLog<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>li", "<cmd>:LspInfo<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>lr", "<cmd>:LspRestart<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>fo", "<cmd>lua vim.lsp.buf.format { async = true }<CR>", opts)
 end)
 
