@@ -9,7 +9,6 @@ telescope.setup {
             theme = "ivy",
             hijack_netrw = true,
             dir_icon = "📁",
-            auto_depth = true,
             grouped = true
         }
     },
@@ -41,7 +40,8 @@ telescope.setup {
             "__pycache__",
             "target",
             "undo",
-            "vendor"
+            "vendor",
+            "env"
         }
     }
 }
