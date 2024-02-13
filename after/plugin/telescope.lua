@@ -9,6 +9,7 @@ telescope.setup {
             theme = "ivy",
             hijack_netrw = true,
             dir_icon = "📁",
+            auto_depth = true,
             grouped = true
         }
     },
@@ -51,7 +52,7 @@ telescope.load_extension "file_browser"
 vim.keymap.set("n", "<C-j>", "<cmd>Telescope file_browser<cr>", { noremap = true })
 vim.api.nvim_set_keymap(
     "n",
-    "<leader>fcd",
+    "<C-s>",
     ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
     { noremap = true }
 )
