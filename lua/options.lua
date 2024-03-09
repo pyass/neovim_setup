@@ -46,9 +46,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 --
-
-local theme, _ = pcall(require, "tokyonight")
-if not theme then
-	return
-end
-vim.cmd("colorscheme tokyonight")
