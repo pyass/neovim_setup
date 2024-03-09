@@ -27,9 +27,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>Y", '"+Y')
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
@@ -44,3 +44,6 @@ vim.keymap.set("n", "<leader>cl", "<cmd>:cclose<CR>")
 vim.keymap.set("n", "<leader>lc", "<cmd>:lclose<CR>")
 
 vim.keymap.set("n", "<leader>re", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+vim.keymap.set("n", "<leader>lz", ":Lazy<CR>", { noremap = true })
+vim.keymap.set("n", "<leader>ci", ":ConformInfo<CR>", { noremap = true })
