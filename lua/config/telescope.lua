@@ -49,10 +49,10 @@ telescope.setup {
 
 telescope.load_extension "file_browser"
 
-vim.keymap.set("n", "<C-s>", "<cmd>Telescope file_browser<cr>", { noremap = true })
+vim.keymap.set("n", "<C-n>", "<cmd>Telescope file_browser<cr>", { noremap = true })
 vim.api.nvim_set_keymap(
     "n",
-    "<C-m>",
+    "<C-s>",
     ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
     { noremap = true }
 )
