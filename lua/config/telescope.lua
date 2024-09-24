@@ -9,7 +9,7 @@ telescope.setup {
             theme = "ivy",
             hijack_netrw = true,
             dir_icon = "📁",
-            initial_mode = 'normal'
+            initial_mode = 'normal',
             auto_depth = true,
             grouped = true
         }
