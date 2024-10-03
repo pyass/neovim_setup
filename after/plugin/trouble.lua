@@ -8,6 +8,8 @@ trouble.setup {
     fold_open = "v",      -- icon used for open folds
     fold_closed = ">",    -- icon used for closed folds
     indent_lines = false, -- add an indent guide below the fold icons
+     warn_no_results = false,
+    open_no_results = true,
     signs = {
         -- icons / text used for a diagnostic
         error = "error",
@@ -18,7 +20,7 @@ trouble.setup {
     use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
 }
 
-vim.keymap.set("n", "<C-d>", function() require("trouble").toggle() end)
+vim.keymap.set("n", "<C-d>", function() require("trouble").toggle("diagnostics") end)
 vim.keymap.set("n", "<leader>xw", function() require("trouble").toggle("workspace_diagnostics") end)
 vim.keymap.set("n", "<leader>xd", function() require("trouble").toggle("document_diagnostics") end)
 vim.keymap.set("n", "<leader>xq", function() require("trouble").toggle("quickfix") end)
